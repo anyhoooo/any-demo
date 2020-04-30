@@ -1,0 +1,12 @@
+/fe_build
+/fe_build_components
+/webpack.stats.js
+/webpack.stats.devserver.js
+.vscode/*
+commonIcon.html
+yarn.lock
+front-end-config-local.js
+api.config.local.js
+.DS_Store
+.history/
+.cache/
