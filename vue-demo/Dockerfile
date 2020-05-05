@@ -1,4 +1,11 @@
-FROM nginx
+FROM node:lts-alpine as build-stage
+WORKDIR /app
+COPY package*.json ./
+RUN yarn install
+COPY . .
+RUN yarn build
+
+FROM nginx as production-stage
 MAINTAINER vue-demo
 COPY dist/  /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
