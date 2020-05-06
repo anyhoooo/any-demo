@@ -12,7 +12,7 @@ jobs:
       # vue 依赖下载，代码构建
       - name: install
         run: |
-          yarn install --production
+          yarn install
           yarn build
       # 根据dockerfile构建镜像
       #   - name: Build the Docker image
