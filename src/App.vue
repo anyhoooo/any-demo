@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="测试下自动部署" />
+    <HelloWorld msg="端端最美" />
   </div>
 </template>
 
