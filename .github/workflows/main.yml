@@ -24,7 +24,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: anyhoo/any-demo
           tag_with_ref: true
-      - name: executing remote ssh commands using ssh key
+      - name: SSH Content And Docker Run
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
