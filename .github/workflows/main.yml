@@ -9,14 +9,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
+      # vue 依赖下载，代码构建
       - name: install
         run: |
           yarn install
           yarn build
-      # Runs a set of commands using the runners shell
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      # 根据dockerfile构建镜像
+      #   - name: Build the Docker image
+      #     run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      # 根据dockerfile构建镜像
       - name: Push to Docker Hub
         uses: docker/build-push-action@v1
         with:
