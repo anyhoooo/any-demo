@@ -33,5 +33,5 @@ jobs:
           #   port: ${{ secrets.SSH_PORT }}
           script: |
             docker container rm -f dev.vue
-            docker run -p 80:80 -dti --name dev.vue anyhoo/any-demo:latest
             docker rmi anyhoo/any-demo
+            docker run -p 80:80 -dti --name dev.vue anyhoo/any-demo:latest
