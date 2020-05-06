@@ -2,20 +2,19 @@ name: vue-CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    # Runs a single command using the runners shell
-    - name: install
-      run: |
-        yarn install
-        yarn build
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+      # Runs a single command using the runners shell
+      - name: install
+        run: |
+          yarn install
+          yarn build
+      # Runs a set of commands using the runners shell
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    #   dockerlogin--usernameanyhoo
