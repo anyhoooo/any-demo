@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       # vue 依赖下载，代码构建
       - name: install
         run: |
@@ -25,3 +24,14 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: anyhoo/any-demo
           tag_with_ref: true
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: anyhoo
+          key: ${{ secrets.SSH_KEY }}
+          #   port: ${{ secrets.SSH_PORT }}
+          script: |
+            docker container rm -f dev.vue
+            docker run -p 80:80 -dti --name dev.vue anyhoo/any-demo:latest
+            docker rmi anyhoo/any-demo
