@@ -18,7 +18,11 @@
 
 FROM node
 MAINTAINER vue-ssr
-COPY package*.json ./
+# 将根目录下的文件都copy到container（运行此镜像的容器）文件系统的app文件夹下
+ADD . /app/
+# cd到app文件夹下
+WORKDIR /app
+# COPY package*.json ./
 RUN yarn install
 RUN yarn build:mac
 COPY . .
