@@ -25,6 +25,7 @@ WORKDIR /app
 # COPY package*.json ./
 RUN yarn install
 RUN yarn build:mac
-COPY . .
+COPY dist/  /usr/share/node
+COPY server/  /usr/share/server
 EXPOSE 3000
 CMD yarn start
