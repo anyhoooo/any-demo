@@ -15,3 +15,12 @@ FROM nginx
 MAINTAINER vue-demo
 COPY dist/  /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
+
+FROM node
+MAINTAINER vue-node
+WORKDIR /node
+COPY package*.json ./
+RUN yarn install
+COPY . .
+EXPOSE 3000
+CMD yarn start

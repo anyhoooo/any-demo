@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="啦啦啦啦" />
+    <HelloWorld msg="啦啦啦啦1" />
+    <router-view />
   </div>
 </template>
 
