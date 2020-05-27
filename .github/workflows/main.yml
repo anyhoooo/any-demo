@@ -9,10 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # vue 依赖下载，代码构建
-      - name: install
-        run: |
-          yarn install
-          yarn build
+      #   - name: install
+      #     run: |
+      #       yarn install
+      #       yarn build
       # 根据dockerfile构建镜像
       #   - name: Build the Docker image
       #     run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
