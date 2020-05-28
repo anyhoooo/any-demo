@@ -41,5 +41,6 @@ FROM node as production-stage
 MAINTAINER vue-ssr
 COPY --from=build-stage /app/dist /usr/share/node
 COPY --from=build-stage /app/server /usr/share/node/server
+WORKDIR /usr/share/node
 EXPOSE 3000
 CMD ["yarn", "start"]
