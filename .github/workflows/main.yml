@@ -34,4 +34,4 @@ jobs:
           script: |
             docker container rm -f dev.vue
             docker rmi anyhoo/any-demo
-            docker run -p 80:3000 -dti --name dev.vue anyhoo/any-demo:latest
+            docker run -p 80:80 -dti --name dev.vue anyhoo/any-demo:latest

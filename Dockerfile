@@ -11,10 +11,10 @@
 # COPY nginx.conf /etc/nginx/nginx.conf
 # RUN echo 'echo init ok!!'
 
-# FROM nginx
-# MAINTAINER vue-demo
-# COPY dist/  /usr/share/nginx/html
-# COPY nginx.conf /etc/nginx/nginx.conf
+FROM nginx
+MAINTAINER vue-demo
+COPY dist/  /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # FROM node
 # MAINTAINER vue-ssr
@@ -47,11 +47,11 @@
 # CMD ["yarn", "start"]
 
 
-FROM node
-MAINTAINER vue-ssr
-COPY dist/  /usr/share/node
-COPY server/ /usr/share/node/server
-COPY package.json /usr/share/node
-WORKDIR /usr/share/node
-EXPOSE 3000
-CMD ["yarn", "start"]
+# FROM node
+# MAINTAINER vue-ssr
+# COPY dist/  /usr/share/node
+# COPY server/ /usr/share/node/server
+# COPY package.json /usr/share/node
+# WORKDIR /usr/share/node
+# EXPOSE 3000
+# CMD ["yarn", "start"]

@@ -9,10 +9,10 @@ const branch = execSync("git rev-parse --abbrev-ref HEAD")
 //挂载分支名称到环境变量上
 process.env.VUE_APP_RELEASE = branch;
 
-const VueSSRServerPlugin = require("vue-server-renderer/server-plugin");
-const VueSSRClientPlugin = require("vue-server-renderer/client-plugin");
+// const VueSSRServerPlugin = require("vue-server-renderer/server-plugin");
+// const VueSSRClientPlugin = require("vue-server-renderer/client-plugin");
 const nodeExternals = require("webpack-node-externals");
-const merge = require("lodash.merge");
+// const merge = require("lodash.merge");
 const TARGET_NODE = process.env.WEBPACK_TARGET === "node";
 const target = TARGET_NODE ? "server" : "client";
 
@@ -46,8 +46,7 @@ module.exports = {
                 // 你可以在这里添加更多的文件类型。例如，未处理 *.vue 原始文件，
                 // 你还应该将修改 `global`（例如 polyfill）的依赖模块列入白名单
                 whitelist: [/\.css$/]
-            }) :
-            undefined,
+            }) : undefined,
         optimization: {
             splitChunks: {
                 chunks: "async",
@@ -57,9 +56,9 @@ module.exports = {
                 maxInitialRequests: 3,
             },
         },
-        plugins: [
-            TARGET_NODE ? new VueSSRServerPlugin() : new VueSSRClientPlugin(),
-        ],
+        // plugins: [
+        //     TARGET_NODE ? new VueSSRServerPlugin() : new VueSSRClientPlugin(),
+        // ],
     }),
     chainWebpack: (config) => {
         config.module
@@ -74,14 +73,14 @@ module.exports = {
                 };
             })
             .loader("less-loader");
-        config.module
-            .rule("vue")
-            .use("vue-loader")
-            .tap((options) => {
-                merge(options, {
-                    optimizeSSR: false,
-                });
-            });
+        // config.module
+        //     .rule("vue")
+        //     .use("vue-loader")
+        //     .tap((options) => {
+        //         merge(options, {
+        //             optimizeSSR: false,
+        //         });
+        //     });
     },
     assetsDir: "./dist",
     outputDir: process.env.OUTPUT_DIR,
