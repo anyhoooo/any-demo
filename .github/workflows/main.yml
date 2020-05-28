@@ -9,10 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # vue 依赖下载，代码构建
-      #   - name: install
-      #     run: |
-      #       yarn install
-      #       yarn build
+        - name: install
+          run: |
+            yarn install
+            yarn build:mac
       # 根据dockerfile构建镜像
       #   - name: Build the Docker image
       #     run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
@@ -34,4 +34,4 @@ jobs:
           script: |
             docker container rm -f dev.vue
             docker rmi anyhoo/any-demo
-            docker run -p 80:80 -dti --name dev.vue anyhoo/any-demo:latest
+            docker run -p 80:3000 -dti --name dev.vue anyhoo/any-demo:latest

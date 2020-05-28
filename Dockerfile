@@ -30,16 +30,26 @@
 # EXPOSE 3000
 # CMD yarn start
 
-FROM node as build-stage
-WORKDIR /app
-COPY package*.json ./
-RUN yarn install
-COPY . .
-RUN yarn build:mac
+# FROM node as build-stage
+# WORKDIR /app
+# COPY package*.json ./
+# RUN yarn install
+# COPY . .
+# RUN yarn build:mac
 
-FROM node as production-stage
+# FROM node as production-stage
+# MAINTAINER vue-ssr
+# COPY --from=build-stage /app/dist /usr/share/node
+# COPY server/ /usr/share/node/server
+# COPY package.json /usr/share/node
+# WORKDIR /usr/share/node
+# EXPOSE 3000
+# CMD ["yarn", "start"]
+
+
+FROM node
 MAINTAINER vue-ssr
-COPY --from=build-stage /app/dist /usr/share/node
+COPY dist/  /usr/share/node
 COPY server/ /usr/share/node/server
 COPY package.json /usr/share/node
 WORKDIR /usr/share/node
