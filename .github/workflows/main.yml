@@ -2,7 +2,7 @@ name: vue-CI
 
 on:
   push:
-    branches: [master]
+    branches: [github-action]
 jobs:
   build:
     runs-on: ubuntu-latest
