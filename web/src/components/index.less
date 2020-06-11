@@ -1,0 +1,43 @@
+.box {
+  width: 320px;
+  height: 120px;
+  .upload-drag {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: #fafafa;
+    border: 1px dashed #d9d9d9;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    .upload-btn {
+      display: table;
+      width: 100%;
+      height: 100%;
+    }
+    .upload-drag-container {
+      display: table-cell;
+      vertical-align: middle;
+      .upload-text {
+        margin: 0 0 4px;
+        color: rgba(0, 0, 0, 0.85);
+        font-size: 16px;
+      }
+    }
+  }
+  .upload-square-Box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 38px);
+    grid-template-rows: repeat(10, 38px);
+    border: 1px solid;
+    grid-gap: 2px;
+    .upload-square {
+      border: 1px solid;
+    }
+    .upload-square-yes {
+      background-color: green;
+      border: 1px solid;
+    }
+  }
+}

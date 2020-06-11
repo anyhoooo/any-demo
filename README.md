@@ -1,17 +1,19 @@
-# any-demo
+# breakpoint-resume
 
-## 借助 GitHub Action 完成自动构建部署前端项目
-
-```
-分支：github-action
-涉及内容：GitHub+GitHub Action、DockerHub、Vue+Dockerfile+Nginx
+## 前端
 
 ```
+cd web
+yarn install
+yarn start
+```
 
-## 实现文件分片断点续传
+## 后端
 
 ```
-分支：breakpoint-resume
-涉及内容：React+Koa2
-
+cd server
+yarn install
+yarn start
 ```
+
+> 后端端口是 3001，前端在 config/webpackDevServer.config.js 中配置了 proxy
