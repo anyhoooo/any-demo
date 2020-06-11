@@ -1,39 +1,17 @@
-# vue-demo
+# any-demo
 
-## 可访问以下网址查看效果
-
-<http://www.anyhoooo.com/>
-
-## Project setup
+## 借助 GitHub Action 完成自动构建部署前端项目
 
 ```
-yarn install
-```
-
-### Compiles and hot-reloads for development
+分支：github-action
+涉及内容：GitHub+GitHub Action、DockerHub、Vue+Dockerfile+Nginx
 
 ```
-yarn run serve
-```
 
-### Compiles and minifies for production
+## 实现文件分片断点续传
 
 ```
-yarn run build
-```
-
-### Run your tests
+分支：breakpoint-resume
+涉及内容：React+Koa2
 
 ```
-yarn run test
-```
-
-### Lints and fixes files
-
-```
-yarn run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
