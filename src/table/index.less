@@ -1,0 +1,121 @@
+.table-container {
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    line-height: 20px;
+    height: 100%;
+    position: relative;
+    width: 600px;
+
+    .table-scroll {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        overflow-x: hidden;
+
+        .table-header {
+            position: absolute;
+            top: 0;
+            z-index: auto;
+
+            table {
+                min-width: 100%;
+            }
+        }
+
+        .table-body {
+            position: relative;
+            top: 42px;
+        }
+    }
+
+    .left-fixed,
+    .right-fixed {
+        position: absolute;
+        top: 0;
+        z-index: 3;
+        overflow: hidden;
+        border-radius: 0;
+        transition: box-shadow 0.3s ease;
+
+        .tableContent,
+        table {
+            width: auto;
+        }
+    }
+
+    .left-fixed {
+        left: 0;
+    }
+
+    .right-fixed {
+        right: 0;
+    }
+
+    .table-content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        .table-body {
+            transition: opacity 0.3s;
+        }
+    }
+
+    .virtualizedBox {
+        position: relative;
+    }
+
+    table {
+        width: 100%;
+        text-align: left;
+        border-radius: 4px 4px 0 0;
+        border-collapse: separate;
+        border-spacing: 0;
+        background-color: #fff;
+
+        // thead,
+        // tbody {
+        //     >tr {
+        //         height: 50px;
+        //     }
+        // }
+
+        thead>tr>th {
+            color: rgba(0, 0, 0, 0.85);
+            font-weight: 500;
+            text-align: left;
+            background: #fafafa;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        thead>tr>th,
+        tbody>tr>td {
+            padding: 10px;
+            line-height: 20px;
+            overflow-wrap: break-word;
+        }
+
+        tbody>tr>td {
+            border-bottom: 1px solid #eee;
+            overflow-wrap: break-word;
+        }
+
+        thead>tr:first-child>th:first-child {
+            border-top-left-radius: 4px;
+        }
+
+        thead>tr:first-child>th:last-child {
+            border-top-right-radius: 4px;
+        }
+    }
+
+    .fixed-table {
+        table-layout: fixed;
+    }
+}
+
+.hideScroll::-webkit-scrollbar {
+    width: 0 !important;
+}
