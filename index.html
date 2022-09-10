@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title></title>
+</head>
+
+<body>
+  <!-- Load the application -->
+  <script src="/dist/common-dependencies.js"></script>
+  <script src="/dist/root-application.js"></script>
+
+  <!-- Static navbar -->
+  <style>
+    body{
+        margin: 0;
+    }
+    .navbar {
+      background-color: #111D4A;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      width: 100%;
+      height: 75px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .navbar ul {
+      display: flex;
+      align-items: center;
+      list-style-type: none;
+      height: 100%;
+    }
+    
+    .navbar li {
+      padding-right: 24px;
+      height: 100%;
+    }
+    
+    .navbar li:hover {
+      opacity: 0.8;
+    }
+    
+    .navbar a {
+      text-decoration: none;
+      color: white;
+    }
+  </style>
+  <div class="navbar">
+    <ul>
+      <a onclick="singleSpaNavigate('/app1')">
+        <li>
+          React
+        </li>
+      </a>
+      <a onclick="singleSpaNavigate('/app2')">
+        <li>
+          Angular
+        </li>
+      </a>
+      <a onclick="singleSpaNavigate('/app3')">
+        <li>
+          远端资源JS
+        </li>
+      </a>
+      <a onclick="singleSpaNavigate('/app4')">
+        <li>
+          JS
+        </li>
+      </a>
+      <a onclick="singleSpaNavigate('/app5')">
+        <li>
+          Vue2
+        </li>
+      </a>
+    </ul>
+  </div>
+</body>
+
+</html>

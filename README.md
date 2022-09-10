@@ -1,36 +1,12 @@
-# any-demo
+# simple-single-spa-webpack-example
+A simple example of how to use webpack with [single-spa](https://github.com/joeldenning/simple-single-spa-webpack-example/blob/master/README.md). Check out [the docs](https://github.com/CanopyTax/single-spa) and [the guide](https://medium.com/@joeldenning/a-step-by-step-guide-to-single-spa-abbbcb1bedc6) to learn more about single-spa itself.
 
-## 借助 GitHub Action 完成自动构建部署前端项目
+This repository hopefully will be helpful for starting your own single-spa project. It has a react application and an angular application coexisting in a minimalistic way. If this project turns out to be helpful to people, I can add some more documentation, comments in the code, etc.
 
-```
-分支：github-action
-涉及内容：GitHub+GitHub Action、DockerHub、Vue+Dockerfile+Nginx
-```
+## How to use it
+1. Clone this project
+2. `yarn install` (or `npm install`)
+3. `yarn watch` (or `npm run watch`)
+4. Open up http://localhost:8080 in a web browser.
 
-## 实现文件分片断点续传
-
-```
-分支：breakpoint-resume
-涉及内容：React+Koa2
-```
-
-## 实现表格头列固定，实现粗糙版虚拟化
-
-```
-分支：virtual-table
-涉及内容：React
-```
-
-#### TODO
-
-- 拖曳滚动条数据问题
-- 滚动过快问题
-- 惯性滚动
-
-
-## 实现一个基础的single-spa功能
-
-```
-分支：mini-single-spa
-涉及内容：single-spa
-```
+基于该demo，实现一个mini-single-spa的基础功能。
